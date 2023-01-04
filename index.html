@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/chatbot-ui.css">
+    <link rel="stylesheet " href="https://drive.google.com/uc?id=1x2TCnJdXTQFErgZhxjMUWKIIfIfSbIy-">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <script src="/public/ai-widget.min.js"></script>
-<!--  <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>-->
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.ts"></script>
+<!--<script src="/public/ai-widget.min.js"></script>-->
+<script src="/public/chatbot-ui.js"></script>
 
 
-    <div id="rasa-chat-widget" data-websocket-url="http://0.0.0.0:5005"></div>
+<!--<div id="rasa-chat-widget" data-websocket-url="http://0.0.0.0:5005"></div>-->
 
-    <div class="ai-widget"
-    data-websocket-url="http://0.0.0.0:5005"
-    data-emoji="complete"
-    data-height="600"
-    data-width="350">
-  </div>
+<div class="ai-widget"
+     data-websocket-url="http://0.0.0.0:5005"
+     data-emoji="complete"
+     data-height="600"
+     data-width="350">
+</div>
 
-  </body>
+<div id="chat-container"></div>
+
+<script src="https://drive.google.com/uc?id=1QslZLwqbJl471otp1Ph1y8MLHSzKqCPl"></script>
+
+<script>
+    createChatBot(host = 'http://localhost:5005/webhooks/rest/webhook',
+    botLogo = "./imgs/bot-logo2.png ",
+    title = "Chatbot der HM München", welcomeMessage = "Hi, ich bin MOWTI. Was kann ich für dich tun ?",
+    inactiveMsg = "Uuuups. Etwas ist schief gelaufen. Ich bin noch ein Prototyp. Entschuldige.",
+    theme="blue ")
+</script>
+
+</body>
+
+<style>
+
+    .messages-item {
+        color: black !important;
+    }
+
+</style>
 </html>
